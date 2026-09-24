@@ -2,6 +2,7 @@ import React from 'react'
 import { useCollection } from '../api.js'
 
 function Users() {
+  // API endpoint: -8000.app.github.dev/api/users
   const { data, loading, error } = useCollection('users')
   return (
     <section><div className="page-heading"><div><div className="eyebrow">Your community</div><h1>Users</h1><p>Meet the athletes behind the numbers.</p></div><div className="metric">{data.length} <small>members</small></div></div>

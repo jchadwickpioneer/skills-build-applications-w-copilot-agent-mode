@@ -2,6 +2,7 @@ import React from 'react'
 import { useCollection } from '../api.js'
 
 function Leaderboard() {
+  // API endpoint: -8000.app.github.dev/api/leaderboard
   const { data, loading, error } = useCollection('leaderboard')
   return (
     <section><div className="page-heading"><div><div className="eyebrow">Friendly competition</div><h1>Leaderboard</h1><p>Small wins add up.</p></div></div>

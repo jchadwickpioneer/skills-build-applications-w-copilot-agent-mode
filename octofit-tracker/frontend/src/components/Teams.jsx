@@ -2,6 +2,7 @@ import React from 'react'
 import { useCollection } from '../api.js'
 
 function Teams() {
+  // API endpoint: -8000.app.github.dev/api/teams
   const { data, loading, error } = useCollection('teams')
   return (
     <section><div className="page-heading"><div><div className="eyebrow">Find your people</div><h1>Teams</h1><p>Progress is better together.</p></div></div>

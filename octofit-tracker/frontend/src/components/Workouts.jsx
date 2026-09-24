@@ -2,6 +2,7 @@ import React from 'react'
 import { useCollection } from '../api.js'
 
 function Workouts() {
+  // API endpoint: -8000.app.github.dev/api/workouts
   const { data, loading, error } = useCollection('workouts')
   return (
     <section><div className="page-heading"><div><div className="eyebrow">Suggested sessions</div><h1>Workouts</h1><p>Choose the next useful effort.</p></div></div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { useCollection } from '../api.js'
 
 function Activities() {
+  // API endpoint: -8000.app.github.dev/api/activities
   const { data, loading, error } = useCollection('activities')
   return (
     <section>
