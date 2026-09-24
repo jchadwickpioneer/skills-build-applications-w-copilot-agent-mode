@@ -13,9 +13,12 @@ export function apiUrl(component) {
 
 function collectionFromPayload(payload) {
   if (Array.isArray(payload)) return payload
-  if (Array.isArray(payload?.data)) return payload.data
-  if (Array.isArray(payload?.items)) return payload.items
-  if (Array.isArray(payload?.results)) return payload.results
+  if (payload && typeof payload === 'object') {
+    for (const key of ['data', 'items', 'results']) {
+      const collection = collectionFromPayload(payload[key])
+      if (collection.length > 0 || Array.isArray(payload[key])) return collection
+    }
+  }
   return []
 }
 

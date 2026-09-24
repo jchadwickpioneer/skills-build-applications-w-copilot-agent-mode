@@ -7,6 +7,15 @@ import Users from './components/Users.jsx'
 import Workouts from './components/Workouts.jsx'
 import { hasApiConfiguration } from './api.js'
 
+const navigationItems = [
+  ['/', 'Overview'],
+  ['/activities', 'Activities'],
+  ['/leaderboard', 'Leaderboard'],
+  ['/teams', 'Teams'],
+  ['/users', 'Users'],
+  ['/workouts', 'Workouts'],
+]
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,12 +25,7 @@ function App() {
           <div><strong>Octofit</strong><span>TRACKER</span></div>
         </div>
         <nav aria-label="Primary navigation">
-          <NavLink to="/">Overview</NavLink>
-          <NavLink to="/activities">Activities</NavLink>
-          <NavLink to="/leaderboard">Leaderboard</NavLink>
-          <NavLink to="/teams">Teams</NavLink>
-          <NavLink to="/users">Users</NavLink>
-          <NavLink to="/workouts">Workouts</NavLink>
+          {navigationItems.map(([path, label]) => <NavLink key={path} to={path}>{label}</NavLink>)}
         </nav>
       </header>
       <main className="app-main">

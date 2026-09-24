@@ -4,6 +4,8 @@
 
 Define `VITE_CODESPACE_NAME` in `octofit-tracker/frontend/.env.local` before starting the frontend. The app uses it to call `https://${VITE_CODESPACE_NAME}-8000.app.github.dev/api/[component]/`.
 
+This variable must be defined for the deployed API host to be available. Do not commit `.env.local`; use a local value such as the Codespaces name shown by your environment.
+
 ```dotenv
 VITE_CODESPACE_NAME=your-codespace-name
 ```

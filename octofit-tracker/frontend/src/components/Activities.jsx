@@ -9,7 +9,7 @@ function Activities() {
       {loading && <p className="loading">Loading activities...</p>}
       {error && <p className="error">{error}</p>}
       {!loading && !error && data.length === 0 && <p className="empty">No activities recorded yet.</p>}
-      <div className="data-grid">{data.map((activity) => <article className="data-card" key={activity._id || activity.id}><div className="eyebrow">{activity.type}</div><h2>{activity.userId?.displayName || activity.userId?.username || 'Athlete'}</h2><p>{activity.durationMinutes} minutes {activity.distanceKm ? `· ${activity.distanceKm} km` : ''}</p><p>{activity.points || 0} points</p></article>)}</div>
+      <div className="data-grid">{data.map((activity, index) => <article className="data-card" key={activity._id || activity.id || index}><div className="eyebrow">{activity.type || 'Activity'}</div><h2>{activity.userId?.displayName || activity.userId?.username || 'Athlete'}</h2><p>{activity.durationMinutes || 0} minutes {activity.distanceKm ? `· ${activity.distanceKm} km` : ''}</p><p>{activity.points || 0} points</p></article>)}</div>
     </section>
   )
 }
